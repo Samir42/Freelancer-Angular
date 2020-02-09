@@ -1,23 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Job } from 'src/app/shared/models/job';
 import { JobService } from 'src/app/services/job.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-job',
   templateUrl: './job.component.html',
 })
 export class JobComponent implements OnInit {
-
-  job: Job;
-
-  constructor(private jobService: JobService) { }
+  jobId: number;
+ 
+  constructor(private jobService: JobService,
+    private route: ActivatedRoute,
+    private router: Router ) { }
 
   ngOnInit() {
-    this.getJob(1).subscribe(res => {this.job = res;console.log(this.job + "from job component")});
+    this.route.params.subscribe(params => {
+      this.jobId = params['id'] //log the value of id
+      console.log(this.jobId)
+    });
   }
-
-  getJob(id: number) {
-    return this.jobService.getJob(id);
-  }
-
 }

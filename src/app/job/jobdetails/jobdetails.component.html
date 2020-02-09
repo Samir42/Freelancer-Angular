@@ -8,12 +8,14 @@
             </div>
             <div class="col-xs-6 col-6 col-md-6 col-s-6 alg-right">
                 <p>$600 - $1500 USD</p>
-                <p>$600 - $1500 USD</p>
+                <small>Job published at {{ openedAt | date:'medium' }}</small>
             </div>
         </div>
         <div class="jobdetailsbody col-xs-12 col-12 col-md-12 col-s-12 bg-white">
             <p>{{ jobTitle }}</p>
             <h3>Skills Required</h3>
-            <p>C# Go</p>
+            <p class="ml-5 alg-left" *ngFor="let js of jobsSkills">
+                {{ js.skill.name }}
+            </p>
         </div>
 </div>

@@ -6,7 +6,7 @@
             <div class="tab">
                 <a class="tablinks" (click)="openTab()"
                     [ngClass]="detailsIsActive ? 'active' : 'inactive'"
-                    routerLink="/jobdetails">Details</a>
+                    [routerLink]="['/jobdetails', jobId]">Details</a>
                 <a class="tablinks" (click)="openTab()"
                     [ngClass]="proposalIsActive ?'active' : 'inactive'"
                     routerLink="/proposalinfo">Proposals</a>

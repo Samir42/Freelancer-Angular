@@ -1,17 +1,20 @@
-<div class="col-12">
-    <div class="searchfilter rounded col-2">
-        <h3>Skills</h3>
-        <input type="text" class="tbx rounded col-12" placeholder="Skills" />
-        <hr id="hr"/>
-        <div class="slidecontainer">
-        <h3>Hourly rate</h3>
-        <input [ngModel]="rate" (ngModelChange)="rate = $event" type="range" min="2" max="80" value="2" class="slider">
-        <p id="rate">${{rate}}<span> - $80</span></p>
+<app-header></app-header>
+<div id="jobfilter">
+    <div class="col-12">
+        <div class="searchfilter rounded col-2">
+            <h3>Skills</h3>
+            <input type="text" class="tbx rounded col-xs-12 col-12" placeholder="Skills" />
+            <hr id="hr"/>
+            <div class="slidecontainer">
+                <h3>Hourly rate</h3>
+                <input [ngModel]="rate" (ngModelChange)="rate = $event" type="range" min="2" max="80" value="2" class="slider">
+                <p id="rate">${{rate}}<span> - $80</span></p>
+            </div>
+            <h3>Specific Location</h3>
+            <input type="text" class="tbx rounded col-12" placeholder= "Add Location" />
+            <button class="btn btn-work rounded text-white col-12" >Search</button>
+        </div>
+        
+        <app-jobresult-list [rate] = "rate"></app-jobresult-list>
     </div>
-    <h3>Specific Location</h3>
-    <input type="text" class="tbx rounded col-12" placeholder= "Add Location" />
-    <button class="btn btn-work rounded text-white col-12" >Search</button>
-</div>
-
-<app-jobresult-list [rate] = "rate"></app-jobresult-list>
 </div>

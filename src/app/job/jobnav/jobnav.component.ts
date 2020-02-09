@@ -13,7 +13,7 @@ export class JobnavComponent implements OnInit {
   constructor(public jobService : JobService) { }
 
   ngOnInit() {
-    this.jobService.getJob(1).subscribe(res => this.jobTitle = res.title);
+    this.jobService.getJob(this.jobId).subscribe(res => this.jobTitle = res.title);
   }
 
   openTab(){
@@ -22,6 +22,9 @@ export class JobnavComponent implements OnInit {
   }
 
   jobTitle:string;
+
+  @Input()
+  jobId:number;
 
 
 }

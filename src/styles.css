@@ -6,9 +6,6 @@ h3{
     box-sizing: border-box;
 }
 
-.jobdetail{
-    margin-top: 10px;
-}
 
 .bg-white{
     background: #FFF !important;
@@ -61,6 +58,13 @@ body{
 }
 
 /*#region Project Details */
+.jobdetail{
+    margin-top: 10px;
+}
+
+.jobdetailsbody .alg-left{
+    font-weight: 500;
+}
 
 .pd{
     justify-content: center;
@@ -263,15 +267,6 @@ body{
 /*#endregion */
 
 /*#region searchResult */
-
-
-.search-result-list{
-    margin: 0;
-}
-
-#searchfilter{
-}
-
 .info-card-body h3{
     font-size: 1.3rem;
 }
@@ -289,7 +284,6 @@ body{
     border: 1px solid silver;
     position: relative;
     cursor: pointer;
-    background: white;
 }
 
 .search-result-list-item a:before{
@@ -481,7 +475,7 @@ form {
 
     .header,.entrycont,#companies,#needwork,#greatabout,
     #projectshowcase,#searchfilter , #jobdetails , #jobnav,
-    #proposals{
+    #proposals,#jobfilter{
         margin: 0 50px;
     }
 
@@ -496,7 +490,7 @@ form {
 @media only screen and (min-width: 992px){
     .header,.entrycont,#companies,#needwork,#greatabout,
     #projectshowcase,#searchfilter ,#jobdetails ,#jobnav,
-    #proposals{
+    #proposals , #jobfilter{
         margin: 0 200px;
     }
 
@@ -557,7 +551,7 @@ form {
 @media only screen and (min-width: 1200px) {
     .header,.entrycont,#companies,#needwork,#greatabout,
     #projectshowcase,#searchfilter ,#jobdetails ,#jobnav,
-    #proposals{
+    #proposals ,#jobfilter{
         margin: 0 300px;
     }
 
@@ -833,14 +827,16 @@ h2{
 .alg-center{
     text-align: center;
 }
-
-
-.alg-left{
-    text-align: left;
-}
-
 .btn{
     padding: 10px 20px;
+}
+
+.ml-5{
+    margin-left: 5px;
+}
+
+.alg-left{
+    float: left;
 }
 
 .rounded{

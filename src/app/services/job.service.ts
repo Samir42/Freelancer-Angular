@@ -19,12 +19,12 @@ export class JobService {
     return this.httpClient.get<Job[]>(this.jobsUrl);
   }
 
-  getJob(id: number): Observable<Job> {
+  getJob(id: number | string): Observable<Job> {
     return this.httpClient.get<Job>(this.jobUrl + '/' + id);
   }
 
 
-  getProposals(id: number): Observable<Request[]> {
+  getProposals(id: number | string): Observable<Request[]> {
     return this.httpClient.get<Request[]>(this.proposalUrl + '/' + id + '/Requests');
   }
 }
