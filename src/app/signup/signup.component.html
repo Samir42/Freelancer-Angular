@@ -1,0 +1,23 @@
+<form #form="ngForm"  class="form" (submit) = "onSubmit(email.value,password.value)">
+    <div class="fromheading">
+        <img height="50" width="200" src="../../assets/media/freelance-logo.png" alt="">
+    </div>
+    <span class="formwelcome">Welcome Back</span>
+    <div class="login" id="fb">
+        <button class="col-s-12 rounded btn btn-fb">Continue with Facebook</button>
+    </div>
+    <div class="fromdivider">
+        <span>OR</span>
+    </div>
+    <div class="forminputs">
+        <input class="email col-s-12 rounded" minlength="5" #email placeholder="Email address" />
+        <input class="col-s-12 rounded" placeholder="Password" type="password" #password/>
+    </div>
+    <div class="login" id="nfb">
+        <button class="col-s-12 rounded btn btn-login">Join
+            Freelancer</button>
+    </div>
+    <hr class="w-100" />
+    <span routerLink="/login" class="redirectSignUp">Already have an account? <a class="text-underlineonhover">Log
+            in</a></span>
+</form>

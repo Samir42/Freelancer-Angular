@@ -1,0 +1,16 @@
+<div class="propheading col-xs-12 col-12 col-md-12 col-s-12">
+    <div class="propheadingbody">
+        <div id="jobnav">
+            <h2 class="text-white">{{  jobTitle }}</h2>
+
+            <div class="tab">
+                <a class="tablinks" (click)="openTab()"
+                    [ngClass]="detailsIsActive ? 'active' : 'inactive'"
+                    routerLink="/jobdetails">Details</a>
+                <a class="tablinks" (click)="openTab()"
+                    [ngClass]="proposalIsActive ?'active' : 'inactive'"
+                    routerLink="/proposalinfo">Proposals</a>
+            </div>
+        </div>
+    </div>
+</div>

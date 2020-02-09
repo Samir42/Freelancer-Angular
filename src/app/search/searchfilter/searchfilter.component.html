@@ -1,0 +1,19 @@
+<div id="searchfilter">
+    <div class="col-12">
+        <div class="searchfilter rounded col-3">
+            <h3>Skills</h3>
+            <input type="text" class="tbx rounded col-12" placeholder="Skills" />
+            <hr id="hr" />
+            <div class="slidecontainer">
+                <h3>Hourly rate</h3>
+                <input [ngModel]="rate" (ngModelChange)="rate = $event" type="range" min="2" max="80" value="2"
+                    class="slider">
+                <p id="rate">${{rate}}<span> - $80</span></p>
+            </div>
+            <h3>Specific Location</h3>
+            <input type="text" class="tbx rounded col-12" placeholder="Add Location" />
+            <button class="btn btn-work rounded text-white col-12">Search</button>
+        </div>
+        <app-searchresult-list [rate]="rate"></app-searchresult-list>
+    </div>
+</div>

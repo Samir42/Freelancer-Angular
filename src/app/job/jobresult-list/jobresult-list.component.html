@@ -1,0 +1,39 @@
+<ul class="search-result-list col-md-12 col-10">
+    <li *ngFor="let job of jobs" class="search-result-list-item rounded">
+        <a href="#">
+            <div class="info-card col-12 col-md-12 col-s-12">
+                <div class="info-card-img col-2 col-md-2 col-s-2">
+                    <svg class="info-card-img" width="70" height="70" xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 24 24"><path d="M0 15.5v1c0 1.103.897 2 2 2
+                    h9v2H7v2h10v-2h-4v-2h9c1.103 0 2-.897 2-2v-1H0zm24-1v-11c0-1.103-.897-2-2-2H2c-1.103 0-2 
+                    .897-2 2v11h24z" fill="#0087E0"></path></svg>
+                </div>
+
+                <div class="info-card-body col-8 col-md-8 col-s-6">
+                    <h3 class="myh3">{{ job.title }}</h3>
+                    <p>{{ job.description }}</p>
+
+                    <div *ngIf="job.freelancer">
+                        <i class="fas fa-user-tie"></i>
+                        <h4  class="icon-info">Completed By {{ job.freelancer.user.name + job.freelancer.user.surname }}</h4>
+                    </div>
+
+                    <div *ngIf="!job.freelancer">
+                        <i class="fas fa-user-tie"></i>
+                        <h4 class="icon-info">No jobs completed yet</h4>
+                    </div>
+                    <div class="nowrap">
+                        <!-- If user { Show user icon }  else { show building icon } -->
+                        <i class="fas fa-thumbtack"></i>
+                        <h4 *ngFor="let js of job.jobsSkills" class="icon-info">
+                            {{ js.skill.name }}</h4>
+                    </div>
+                </div>
+                <div class="info-card-price col-2 col-md-4 col-s-4">
+                    <h3>$ {{ job.price }}</h3>
+                    <h4>USD</h4>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>

@@ -1,0 +1,27 @@
+<ul class="search-result-list col-9 pt-0 pr-0">
+    <li *ngFor="let user of users;" class="search-result-list-item 
+        rounded col-12 col-md-12 col-s-12 col-xs-12">
+        <a href="#">
+            <div class="info-card col-12 col-md-12 col-s-12 col-xs-12">
+                <div class="info-card-body col-8 col-md-8 col-s-8 col-xs-8">
+                    <h3>{{ user.name + ' ' + user.surname }}</h3>
+                    <p>{{ user.additionalInfo }}</p>
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4 class="icon-info">{{ user.address }}</h4>
+                    </div>
+                    <div class="nowrap">
+                        <i class="fas fa-thumbtack"></i>
+                        <h4 *ngFor="let skillUser of user.freelancer.skillsUsers" class="icon-info">
+                            {{ skillUser.skill.name }} </h4>
+                    </div>
+                </div>
+                <div class="info-card-price col-4 col-md-4 col-s-4 col-xs-4">
+                    <h3>$ {{ user.freelancer.payHourly }}</h3>
+                    <h4>USD/hour</h4>
+                    <button class="btn btn-work rounded text-white">Hire me</button>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>
