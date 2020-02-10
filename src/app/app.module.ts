@@ -38,6 +38,7 @@ const appRoutes: Routes = [
     component: HomepageComponent
   },
   { path: 'jobs/:id/details', component: JobComponent },
+  { path: 'jobs/:id/proposals', component: ProposalinfoComponent },
   { path: 'jobdetails/:id', component: JobdetailsComponent }
 ];
 

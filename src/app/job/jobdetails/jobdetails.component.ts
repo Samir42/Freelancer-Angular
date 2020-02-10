@@ -21,14 +21,17 @@ export class JobdetailsComponent implements OnInit {
 
     this.jobService.getJob(this.jobId).subscribe(
       x => {
-        this.jobTitle = x.title;
+        this.jobDescription = x.description;
         this.jobsSkills = x.jobsSkills;
         this.openedAt = x.openedAt;
+        this.price = x.price;
       })
+      console.log(this.jobsSkills)
   }
 
+  price:number
   jobsSkills: JobsSkills[];
-  jobTitle: string;
+  jobDescription: string;
   openedAt: Time;
 
   jobId: number;
