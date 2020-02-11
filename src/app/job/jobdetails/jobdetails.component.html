@@ -1,22 +1,19 @@
-<app-header></app-header>
-<app-jobnav [jobId]="jobId"></app-jobnav>
-
 <div id="jobdetails">
         <div class="rounded jobdetailsheading p-0 col-xs-12 col-12 col-md-12 col-s-12">
             <div class="col-xs-6 col-6 col-md-6 col-s-6">
                 <h2 class="pd">Project Details</h2>
             </div>
             <div class="col-xs-6 col-6 col-md-6 col-s-6 alg-right">
-                <p>$ {{ price }} USD</p>
-                <small>Job published at {{ openedAt | date:'medium' }}</small>
+                <p>$ {{ job?.price }} USD</p>
+                <small>Job published at {{ job?.openedAt | date:'medium' }}</small>
             </div>
         </div>
         <div class="jobdetailsbody col-xs-12 col-12 col-md-12 col-s-12 bg-white">
-            <p>{{ jobDescription }}</p>
+            <p>{{ job?.description}}</p>
             
-            <h3>{{jobsSkills.length ? 'Skills Required' : 'No Skills Required'}}</h3>
-            <p class="ml-5 alg-left" *ngFor="let js of jobsSkills">
-                {{ js.skill.name }}
+            <h3>{{ job?.jobsSkills?.length ? 'Skills Required' : 'No Skills Required' }}</h3>
+            <p class="ml-5 alg-left" *ngFor="let js of job?.jobsSkills">
+                {{ js?.skill?.name }}
             </p>
         </div>
 </div>

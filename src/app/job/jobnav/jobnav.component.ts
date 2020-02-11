@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { JobService } from 'src/app/services/job.service';
+import { Job } from 'src/app/shared/models/job';
 
 @Component({
   selector: 'app-jobnav',
@@ -25,6 +26,8 @@ export class JobnavComponent implements OnInit {
 
   @Input()
   jobId:number;
+  @Input()
+  job:Job;
 
 
 }

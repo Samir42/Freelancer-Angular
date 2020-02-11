@@ -18,22 +18,10 @@ export class JobdetailsComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.jobId = params['id'] //log the value of id
     });
-
-    this.jobService.getJob(this.jobId).subscribe(
-      x => {
-        this.jobDescription = x.description;
-        this.jobsSkills = x.jobsSkills;
-        this.openedAt = x.openedAt;
-        this.price = x.price;
-      })
-      console.log(this.jobsSkills)
   }
 
-  price:number
-  jobsSkills: JobsSkills[];
-  jobDescription: string;
-  openedAt: Time;
-
   jobId: number;
-
+  
+  @Input()
+  job:Job;
 }

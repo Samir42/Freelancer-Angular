@@ -24,7 +24,8 @@ import { JobnavComponent } from './job/jobnav/jobnav.component';
 import { JobdetailsComponent } from './job/jobdetails/jobdetails.component';
 import { JobComponent } from './job/job/job.component';
 import { JobService } from './services/job.service';
-
+import {JobRoutingModule } from './job/job-routing.module'
+ 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
 
@@ -32,14 +33,10 @@ const appRoutes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'proposals', component: ProposalsComponent},
   { path: 'proposalinfo', component: ProposalinfoComponent},
-  { path: 'jobdetails', component: JobdetailsComponent},
   {
     path: '',
     component: HomepageComponent
-  },
-  { path: 'jobs/:id/details', component: JobComponent },
-  { path: 'jobs/:id/proposals', component: ProposalinfoComponent },
-  { path: 'jobdetails/:id', component: JobdetailsComponent }
+  }
 ];
 
 
@@ -66,6 +63,7 @@ const appRoutes: Routes = [
     JobComponent
   ],
   imports: [
+    JobRoutingModule,
     RouterModule.forRoot(
       appRoutes,
       // { enableTracing: true } // <-- debugging purposes only

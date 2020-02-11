@@ -9,15 +9,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class JobComponent implements OnInit {
   jobId: number;
- 
+  job: Job;
+
   constructor(private jobService: JobService,
     private route: ActivatedRoute,
-    private router: Router ) { }
+    private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.jobId = params['id'] //log the value of id
-      console.log(this.jobId)
     });
+
+    this.jobService.getJob(this.jobId).subscribe(x => this.job = x);
   }
 }
