@@ -7,55 +7,27 @@ h3{
 }
 
 
-.bg-white{
-    background: #FFF !important;
+#number{
+    padding: 5px;
 }
 
-.bg-dark{
-    background: yellow;
-}
-.alg-right{
-    float: right;
+.focus:focus{
+    box-shadow: 0 0 0  2px rgba(102, 175, 233, 1)
 }
 
-body{
-    margin: 0;
-    background: #F0F0F0;
+#createrequest > div{
+    margin-top: 10px;
 }
 
-.p-0{
-    padding: 0 !important;
+.alert{
+    border-radius: 5px;
 }
 
-.row::after{
-    content: "";
-    display: table;
-    clear: both;
+.alert-danger{
+    background: #F2DEDE;
+    color: #A94442;
 }
 
-.m-0{
-    margin: 0;
-}
-
-.f-l{
-    float: left !important;
-}
-
-.pl-0{
-    padding-left: 0 !important;
-}
-
-.ml-20{
-    margin-left: 20px;
-}
-
-.mb-15{
-    margin-bottom: 15px;
-}
-
-.completion {
-    font-size: 1.1rem;
-}
 
 /*#region Project Details */
 .jobdetail{
@@ -475,7 +447,7 @@ form {
 
     .header,.entrycont,#companies,#needwork,#greatabout,
     #projectshowcase,#searchfilter , #jobdetails , #jobnav,
-    #proposals,#jobfilter{
+    #proposals,#jobfilter ,#createrequest{
         margin: 0 50px;
     }
 
@@ -490,7 +462,7 @@ form {
 @media only screen and (min-width: 992px){
     .header,.entrycont,#companies,#needwork,#greatabout,
     #projectshowcase,#searchfilter ,#jobdetails ,#jobnav,
-    #proposals , #jobfilter{
+    #proposals , #jobfilter, #createrequest{
         margin: 0 200px;
     }
 
@@ -551,7 +523,7 @@ form {
 @media only screen and (min-width: 1200px) {
     .header,.entrycont,#companies,#needwork,#greatabout,
     #projectshowcase,#searchfilter ,#jobdetails ,#jobnav,
-    #proposals ,#jobfilter{
+    #proposals ,#jobfilter ,#createrequest{
         margin: 0 300px;
     }
 
@@ -798,6 +770,60 @@ header{
 /*#endregion */
 
 /*#region Common css */
+
+.bg-white{
+    background: #FFF !important;
+}
+
+.bg-dark{
+    background: yellow;
+}
+.alg-right{
+    float: right;
+}
+
+body{
+    margin: 0;
+    background: #F0F0F0;
+}
+
+.p-5{
+    padding: 5px !important;
+}
+
+.p-0{
+    padding: 0 !important;
+}
+
+.row::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.m-0{
+    margin: 0;
+}
+
+.f-l{
+    float: left !important;
+}
+
+.pl-0{
+    padding-left: 0 !important;
+}
+
+.ml-20{
+    margin-left: 20px;
+}
+
+.mb-15{
+    margin-bottom: 15px;
+}
+
+.completion {
+    font-size: 1.1rem;
+}
 
 .pt-0{
     padding-top: 0 !important;

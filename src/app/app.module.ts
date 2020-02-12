@@ -24,7 +24,8 @@ import { JobnavComponent } from './job/jobnav/jobnav.component';
 import { JobdetailsComponent } from './job/jobdetails/jobdetails.component';
 import { JobComponent } from './job/job/job.component';
 import { JobService } from './services/job.service';
-import {JobRoutingModule } from './job/job-routing.module'
+import {JobRoutingModule } from './job/job-routing.module';
+import { CreaterequestComponent } from './job/createrequest/createrequest.component'
  
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -60,7 +61,8 @@ const appRoutes: Routes = [
     ProposalinfoComponent,
     JobnavComponent,
     JobdetailsComponent,
-    JobComponent
+    JobComponent,
+    CreaterequestComponent
   ],
   imports: [
     JobRoutingModule,

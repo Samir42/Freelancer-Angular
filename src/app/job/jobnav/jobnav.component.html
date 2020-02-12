@@ -9,9 +9,9 @@
                     [routerLink]="['/jobdetails', jobId]">Details</a>
                 <a class="tablinks" (click)="openTab()"
                     [ngClass]="proposalIsActive ?'active' : 'inactive'"
-                    routerLink="/proposalinfo">Proposals</a>
+                    [routerLink]="['/jobs', jobId, 'proposals']">Proposals</a>
             </div>
         </div>
     </div>
 </div>
-<app-jobdetails [job] = "job"></app-jobdetails>
+<app-jobdetails [job]="job"></app-jobdetails>

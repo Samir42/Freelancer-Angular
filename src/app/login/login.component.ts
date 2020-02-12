@@ -13,11 +13,11 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  // onSubmit(email:string,password:string){
-  //   const user : User  = {email,password} as User;
-  //   console.log(user.email);
-  //   this.accountService.login(user);
-  // }
+  onSubmit(email:string,password:string){
+    const user : User  = {email,password} as User;
+    console.log(user.email);
+    this.accountService.login(user);
+  }
 
 
 }

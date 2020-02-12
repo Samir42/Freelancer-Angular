@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { JobService } from 'src/app/services/job.service';
 
@@ -8,18 +8,23 @@ import { JobService } from 'src/app/services/job.service';
 })
 export class ProposalsComponent implements OnInit {
 
-  constructor(private jobService:JobService) { }
+  constructor(private jobService: JobService) { }
 
-  proposals:Request[];
+  proposals: Request[];
 
   ngOnInit() {
-    this.getProposals(1);
+    this.getProposals(this.jobId);
   }
 
 
-  getProposals(id:number){
+  getProposals(id: number) {
     return this.jobService.getProposals(id)
-                          .subscribe(res=> {this.proposals = res;
-                                      console.log(this.proposals)});
+      .subscribe(res => {
+      this.proposals = res;
+        console.log(this.proposals)
+      });
   }
+
+  @Input()
+  jobId: number;
 }

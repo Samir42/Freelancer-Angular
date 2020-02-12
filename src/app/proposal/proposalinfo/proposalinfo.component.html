@@ -1,8 +1,8 @@
 <app-header></app-header>
-<app-jobnav></app-jobnav>
+<app-jobnav [jobId]="jobId"></app-jobnav>
 <div id="proposals">
     <div class="col-12">
-        <app-proposals></app-proposals>
+        <app-proposals [jobId] = "jobId"></app-proposals>
         <div class="mt-15 col-3 col-md-3 rounded bg-white proposalinfo">
             <h3>Budget</h3>
             <p>$15.00 – 25.00 USD /hr</p>

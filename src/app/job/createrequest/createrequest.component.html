@@ -1,0 +1,25 @@
+<div id="createrequest">
+        <div class="bg-white rounded col-lg-12 col-12 col-md-12 col-s-12 col-xs-12">
+            <form action="" id="reqform">
+                <label for="description">Description</label>
+                <input type="text" class="w-100 p-5 rounded tbx" id="description" 
+                required [(ngModel)]="req" name="description"
+                    #description="ngModel" />
+                <div [hidden]="description.valid || description.pristine" class="alert alert-danger rounded col-12">
+                    Description is required
+                </div>
+
+                <label for="howManyDay">How Many Day</label>
+                <input type="number" id="number" class="w-100 rounded tbx"
+                  required name="howManyDay" #howManyDay="ngModel"
+                  [(ngModel)]="hmd"/>
+                  <div [hidden]="howManyDay.valid || howManyDay.pristine"
+                       class="alert alert-danger rounded col-12">
+                        Choose deadline
+                  </div>
+
+
+
+            </form>
+    </div>
+</div>
