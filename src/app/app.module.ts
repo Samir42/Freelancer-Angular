@@ -25,7 +25,8 @@ import { JobdetailsComponent } from './job/jobdetails/jobdetails.component';
 import { JobComponent } from './job/job/job.component';
 import { JobService } from './services/job.service';
 import {JobRoutingModule } from './job/job-routing.module';
-import { CreaterequestComponent } from './job/createrequest/createrequest.component'
+import { CreaterequestComponent } from './job/createrequest/createrequest.component';
+import { FirsterrorPipe } from './pipes/firsterror.pipe'
  
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -62,7 +63,8 @@ const appRoutes: Routes = [
     JobnavComponent,
     JobdetailsComponent,
     JobComponent,
-    CreaterequestComponent
+    CreaterequestComponent,
+    FirsterrorPipe
   ],
   imports: [
     JobRoutingModule,

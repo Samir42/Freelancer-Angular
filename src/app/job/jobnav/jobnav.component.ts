@@ -26,8 +26,4 @@ export class JobnavComponent implements OnInit {
 
   @Input()
   jobId:number;
-  @Input()
-  job:Job;
-
-
 }

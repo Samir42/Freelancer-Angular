@@ -14,5 +14,4 @@ export interface Job{
     client:Client;
     freelancer:Freelancer;
     jobsSkills:JobsSkills[];
-
 }
