@@ -1,6 +1,6 @@
 <div id="createrequest">
     <div class="bg-white rounded col-lg-12 col-12 col-md-12 col-s-12 col-xs-12">
-        <form id="reqform" (onsubmit)="Apply()">
+        <form id="reqform">
             <div class="mb-10">
                 <h1 class="p-15">Create Bid</h1>
             </div>
@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div>
-                <label for="howManyDay">How many day ? 
+                <label for="howManyDay">How many day ?
                 </label>
                 <input type="number" id="number" class="focus w-100 rounded tbx" min="1" max="7" required
                     name="howManyDay" #howManyDay="ngModel" [(ngModel)]="hmd" />
@@ -29,15 +29,15 @@
                 </label>
                 <input type="number" id="number" class="focus w-100 rounded tbx" min="5" max="10000" required
                     name="offer" #offer="ngModel" [(ngModel)]="offered" />
-                <div [hidden]="offer.valid || offer.pristine"
-                    class="alert alert-danger rounded col-xs-12 col-s-12">
+                <div [hidden]="offer.valid || offer.pristine" class="alert alert-danger rounded col-xs-12 col-s-12">
                     How much do you offer?
                 </div>
             </div>
 
 
-            <button [disabled]="!description.valid || !howManyDay.valid || !offer.valid" (click)="clicked()"
-                class="btn btn-work rounded text-white col-s-12 col-xs-12">Apply</button>
+            <button [disabled]="!description.valid || !howManyDay.valid || !offer.valid"
+                class="btn btn-work rounded text-white col-s-12 col-xs-12"
+                (click)="onApply(description.value,howManyDay.value,offer.value)">Apply</button>
         </form>
     </div>
 </div>

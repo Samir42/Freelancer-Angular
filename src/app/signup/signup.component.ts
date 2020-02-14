@@ -15,7 +15,7 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
   }
 
-
+  isFreelancer:boolean;
 
   onSubmit(email: string, password: string) {
     // const user: User = { email, password } as User;

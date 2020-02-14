@@ -26,7 +26,9 @@ import { JobComponent } from './job/job/job.component';
 import { JobService } from './services/job.service';
 import {JobRoutingModule } from './job/job-routing.module';
 import { CreaterequestComponent } from './job/createrequest/createrequest.component';
-import { FirsterrorPipe } from './pipes/firsterror.pipe'
+import { FirsterrorPipe } from './pipes/firsterror.pipe';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations'
+import { MatSliderModule } from '@angular/material/slider';
  
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -67,6 +69,7 @@ const appRoutes: Routes = [
     FirsterrorPipe
   ],
   imports: [
+    MatSliderModule,
     JobRoutingModule,
     RouterModule.forRoot(
       appRoutes,
@@ -74,7 +77,8 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NoopAnimationsModule
   ],
   providers: [JobService],
   bootstrap: [AppComponent]

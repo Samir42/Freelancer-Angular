@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FirsterrorPipe } from 'src/app/pipes/firsterror.pipe';
 import { JobService } from 'src/app/services/job.service';
+import { RequestService } from 'src/app/services/request.service';
 
 @Component({
   selector: 'app-createrequest',
@@ -10,7 +11,7 @@ import { JobService } from 'src/app/services/job.service';
 export class CreaterequestComponent implements OnInit {
 
 
-  constructor(private jobService: JobService) { }
+  constructor(private requestService: RequestService) { }
 
   ngOnInit() {
   }
@@ -19,15 +20,15 @@ export class CreaterequestComponent implements OnInit {
     console.log(x);
   }
 
-  clicked() {
-    console.log(this.offered, this.hmd, this.desc, this.freelancerId, this.jobId)
-  }
-
-  offered: string;
-  hmd: number;
-  desc: string;
-  freelancerId: number;
   @Input()
   jobId: number;
 
+
+  onApply(requestDescription: string, howManyDay: number, offer: number) {
+
+    const request: Request = { requestDescription, howManyDay, offer,jobId:this.jobId} as unknown as Request;
+    console.log(request);
+    console.log(localStorage.getItem('token'));
+    return this.requestService.postRequest(request).subscribe(err => console.log(err));
+  }
 }

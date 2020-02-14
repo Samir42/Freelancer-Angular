@@ -1,4 +1,4 @@
-<form #form="ngForm"  class="form" (submit) = "onSubmit(email.value,password.value)">
+<form #form="ngForm" class="form" (submit)="onSubmit(email.value,password.value)">
     <div class="fromheading">
         <img height="50" width="200" src="../../assets/media/freelance-logo.png" alt="">
     </div>
@@ -10,12 +10,49 @@
         <span>OR</span>
     </div>
     <div class="forminputs">
-        <input class="email col-s-12 rounded" minlength="5" #email placeholder="Email address" />
-        <input class="col-s-12 rounded" placeholder="Password" type="password" #password/>
+        <input class="focus email col-s-12 rounded" minlength="5" #email placeholder="Email address" />
+        <input class="focus col-s-12 rounded" placeholder="Password" type="password" #password />
+        <div class="alg-left">
+            <input type="checkbox" id="freelancer" name="freelancer" value="freelancer" [(ngModel)]="isFreelancer" />
+            <label for="freelancer">Register me also freelancer</label><br>
+        </div>
+    </div>
+
+    <div *ngIf="isFreelancer" class="forminputs">
+        <div>
+            <input type="number" id="number" class="alg-left focus w-100 rounded tbx" min="2" max="80" required
+                name="offer" #offer="ngModel" [(ngModel)]="offered" placeholder="Hourly offer"/>
+            <div [hidden]="offer.valid || offer.pristine" class="alert alert-danger rounded col-xs-12 col-s-12">
+                How much do you offer?
+            </div>
+        </div>
+
+        <!-- <mat-form-field>
+            <mat-label>Toppings</mat-label>
+            <mat-select [formControl]="toppings" multiple>
+              <mat-select-trigger>
+                {{toppings.value ? toppings.value[0] : ''}}
+                <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+                  (+{{toppings.value.length - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+                </span>
+              </mat-select-trigger>
+              <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+            </mat-select>
+          </mat-form-field><mat-form-field>
+            <mat-label>Toppings</mat-label>
+            <mat-select [formControl]="toppings" multiple>
+              <mat-select-trigger>
+                {{toppings.value ? toppings.value[0] : ''}}
+                <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+                  (+{{toppings.value.length - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+                </span>
+              </mat-select-trigger>
+              <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+            </mat-select>
+          </mat-form-field> -->
     </div>
     <div class="login" id="nfb">
-        <button class="col-s-12 rounded btn btn-login">Join
-            Freelancer</button>
+        <button class="col-s-12 rounded btn btn-login">Join Freelancer</button>
     </div>
     <hr class="w-100" />
     <span routerLink="/login" class="redirectSignUp">Already have an account? <a class="text-underlineonhover">Log

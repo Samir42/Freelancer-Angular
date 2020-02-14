@@ -14,22 +14,27 @@ export class AccountService {
   isLoggedIn: boolean = false;
   // store the URL so we can redirect after logging in
   redirectUrl: string = "/homepage";
-  loginUrl = 'http://localhost:5000/api/Account/';
+  loginUrl = 'http://localhost:5000/api/Account/login';
 
 
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
   ) { }
 
-  login(user:User) {
-    
-    return this.http.get(this.loginUrl+user.email).subscribe(
-      res => {
+  login(user: User) {
+    return this.http.post(this.loginUrl,user).subscribe(
+      (res: any) => {
         this.isLoggedIn = true;
         if (this.redirectUrl) {
+          localStorage.setItem('token', res.token);
           this.router.navigate([this.redirectUrl]);
           this.redirectUrl = null;
+        }
+      },
+      err => {
+        if (err.status == 400) {
+          console.log(err.message)
         }
       }
     );

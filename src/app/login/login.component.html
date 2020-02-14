@@ -1,4 +1,4 @@
-<form #ngForm class="form" (submit) = "onSubmit(email.value,password.value)">
+<form #ngForm class="form">
     <div class="fromheading">
         <img height="50" width="200" src="../../assets/media/freelance-logo.png" alt="">
     </div>
@@ -10,11 +10,12 @@
         <span>OR</span>
     </div>
     <div class="forminputs">
-        <input class="email col-s-12 rounded" placeholder="Email address" #email />
-        <input class="col-s-12 rounded" type="password" placeholder="Password" #password />
+        <input class="focus email col-s-12 rounded" placeholder="Email address" #email />
+        <input class="focus col-s-12 rounded" type="password" placeholder="Password" #password />
     </div>
     <div class="login" id="nfb">
-        <button class="col-s-12 rounded btn btn-login">Login In</button>
+        <button class="col-s-12 rounded btn btn-login" 
+        (click)="onSubmit(email.value,password.value)">Login In</button>
     </div>
     <hr class="w-100" />
     <span routerLink="/signup" routerLinkActive="active" class="redirectSignUp">Don't have an account? <a
