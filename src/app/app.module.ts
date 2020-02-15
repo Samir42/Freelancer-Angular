@@ -29,6 +29,7 @@ import { CreaterequestComponent } from './job/createrequest/createrequest.compon
 import { FirsterrorPipe } from './pipes/firsterror.pipe';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'
 import { MatSliderModule } from '@angular/material/slider';
+import {MatSelectModule} from '@angular/material/select';
  
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -70,6 +71,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     MatSliderModule,
+    MatSelectModule,
     JobRoutingModule,
     RouterModule.forRoot(
       appRoutes,

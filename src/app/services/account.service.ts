@@ -15,6 +15,7 @@ export class AccountService {
   // store the URL so we can redirect after logging in
   redirectUrl: string = "/homepage";
   loginUrl = 'http://localhost:5000/api/Account/login';
+  signupUrl= 'http://localhost:5000/api/Account/signup';
 
 
   constructor(
@@ -34,10 +35,14 @@ export class AccountService {
       },
       err => {
         if (err.status == 400) {
-          console.log(err.message)
+          console.log(err)
         }
       }
     );
+  }
+
+  signUp(user: User) {
+    return this.http.post(this.signupUrl, user).subscribe(err => console.log(err));
   }
 
   logout(): void {
