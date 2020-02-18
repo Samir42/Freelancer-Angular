@@ -15,7 +15,7 @@ export class AccountService {
   // store the URL so we can redirect after logging in
   redirectUrl: string = "/homepage";
   loginUrl = 'http://localhost:5000/api/Account/login';
-  signupUrl= 'http://localhost:5000/api/Account/signup';
+  signupUrl = 'http://localhost:5000/api/Account/signup';
 
 
   constructor(
@@ -24,7 +24,7 @@ export class AccountService {
   ) { }
 
   login(user: User) {
-    return this.http.post(this.loginUrl,user).subscribe(
+    return this.http.post(this.loginUrl, user).subscribe(
       (res: any) => {
         this.isLoggedIn = true;
         if (this.redirectUrl) {
@@ -42,7 +42,15 @@ export class AccountService {
   }
 
   signUp(user: User) {
-    return this.http.post(this.signupUrl, user).subscribe(err => console.log(err));
+    return this.http.post(this.signupUrl, user).subscribe(
+      (res: any) => {
+        console.log(res.token)
+        localStorage.setItem('token', res.token);
+      },
+      res => {
+        console.log(res);
+      }
+    );
   }
 
   logout(): void {

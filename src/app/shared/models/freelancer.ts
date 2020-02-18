@@ -1,12 +1,9 @@
 import { SkillsUsers } from './skillsUsers';
+import { Skill } from './skill';
 
-export interface Freelancer{
-    payHourly:number;
+export interface Freelancer {
+    id: number;
+    userId:number;
+    payHourly: number;
     skillsUsers: SkillsUsers[];
 }
-
-// export interface Freelancer {
-//     id: number;
-//     userForeignKey: number;
-//     skillUsers: SkillUsers[];
-// }
