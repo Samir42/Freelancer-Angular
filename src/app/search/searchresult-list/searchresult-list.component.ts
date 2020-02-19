@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
 })
 export class SearchresultListComponent implements OnInit {
   users: User[] = [];
-  copyUsers:User[];
-  
+  copyUsers: User[];
+
   constructor(private freelancerService: FreelancerService) { }
 
   ngOnInit() {
@@ -23,7 +23,7 @@ export class SearchresultListComponent implements OnInit {
 
   showSkill() {
     this.users.forEach(user => {
-      user.freelancer.skillsUsers.forEach(skilluser => {
+      user.freelancer.skillUsers.forEach(skilluser => {
         console.log(skilluser.skill);
       })
     });
@@ -37,15 +37,7 @@ export class SearchresultListComponent implements OnInit {
     // this.users = Object.assign({}, this.updateFreelancers(rate));
   }
 
-  updateFreelancers(rate: number){
-    // if (rate)
-      this.users = this.users.filter(x => x.freelancer.payHourly >=  rate);
-    // if (!rate)
-    //   return this.users.filter(x => x.freelancer.payHourly != 25);
-    // return this.users;
+  updateFreelancers(rate: number) {
+    this.users = this.users.filter(x => x.freelancer.payHourly >= rate);
   }
-
-  // trackByFn(index, item) {
-  //   return index;
-  // }
 }

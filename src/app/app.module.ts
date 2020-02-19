@@ -30,6 +30,9 @@ import { FirsterrorPipe } from './pipes/firsterror.pipe';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'
 import { MatSliderModule } from '@angular/material/slider';
 import {MatSelectModule} from '@angular/material/select';
+import { FilterComponent } from './user/project/filter/filter.component';
+import { MyprojectsComponent } from './user/project/myprojects/myprojects.component';
+import { CreateComponent } from './job/create/create.component';
  
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -67,7 +70,10 @@ const appRoutes: Routes = [
     JobdetailsComponent,
     JobComponent,
     CreaterequestComponent,
-    FirsterrorPipe
+    FirsterrorPipe,
+    FilterComponent,
+    MyprojectsComponent,
+    CreateComponent
   ],
   imports: [
     MatSliderModule,

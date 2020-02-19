@@ -1,9 +1,10 @@
-import { SkillsUsers } from './skillsUsers';
-import { Skill } from './skill';
+import { SkillUser } from './skillsUsers';
 
 export interface Freelancer {
     id: number;
     userId:number;
     payHourly: number;
-    skillsUsers: SkillsUsers[];
+    password:string;
+    companyName:string;
+    skillUsers: SkillUser[];
 }

@@ -10,10 +10,12 @@ import { RequestService } from 'src/app/services/request.service';
 })
 export class CreaterequestComponent implements OnInit {
 
-
   constructor(private requestService: RequestService) { }
 
   ngOnInit() {
+    this.requestService.hasRequest(this.jobId).subscribe(res => {
+      this.hasRequest = res;
+    });
   }
 
   show(x) {
@@ -22,13 +24,12 @@ export class CreaterequestComponent implements OnInit {
 
   @Input()
   jobId: number;
+  hasRequest;
 
 
   onApply(requestDescription: string, howManyDay: number, offer: number) {
 
-    const request: Request = { requestDescription, howManyDay, offer,jobId:this.jobId} as unknown as Request;
-    console.log(request);
-    console.log(localStorage.getItem('token'));
+    const request: Request = { requestDescription, howManyDay, offer, jobId: this.jobId } as unknown as Request;
     return this.requestService.postRequest(request).subscribe(err => console.log(err));
   }
 }

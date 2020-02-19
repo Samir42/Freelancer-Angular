@@ -1,5 +1,14 @@
-<div id="createrequest">
-    <div class="bg-white rounded col-lg-12 col-12 col-md-12 col-s-12 col-xs-12">
+<div *ngIf="hasRequest">
+    <div id="hasRequest">
+        <div class="bg-white mt-15 rounded col-s-12 col-xs-12">
+            <h1 class="d-block">Already you have request on this job.</h1>
+            <h3><a [routerLink]="['/jobs', jobId, 'proposals']" class="text-underlineonhover showProp">Show my request</a></h3>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!hasRequest" id="createrequest">
+    <div class="bg-white rounded col-s-12 col-xs-12">
         <form id="reqform">
             <div class="mb-10">
                 <h1 class="p-15">Create Bid</h1>

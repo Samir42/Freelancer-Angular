@@ -16,5 +16,11 @@ export class RequestService {
     return this.httpClient.post<Request>(this.requestUrl,request, { headers: tokenHeader });
   }
 
+  hasRequest(jobId:number) : Observable<boolean>{
+    var tokenHeader = new HttpHeaders({ 'Authorization': 'Bearer ' + localStorage.getItem('token') });
+
+    return this.httpClient.get<boolean>(this.requestUrl+'/' + jobId + "/exists",{headers:tokenHeader});
+  }
+
 
 }

@@ -6,6 +6,17 @@ h3{
     box-sizing: border-box;
 }
 
+
+.showProp{
+    color: #139FF0;
+    cursor: pointer;
+}
+
+
+.d-block{
+    display: block;
+}
+
 .mb-10{
     margin-bottom: 10px;
 }
@@ -451,7 +462,7 @@ form {
 
     .header,.entrycont,#companies,#needwork,#greatabout,
     #projectshowcase,#searchfilter , #jobdetails , #jobnav,
-    #proposals,#jobfilter ,#createrequest{
+    #proposals,#jobfilter ,#createrequest,#hasRequest{
         margin: 0 50px;
     }
 
@@ -466,7 +477,7 @@ form {
 @media only screen and (min-width: 992px){
     .header,.entrycont,#companies,#needwork,#greatabout,
     #projectshowcase,#searchfilter ,#jobdetails ,#jobnav,
-    #proposals , #jobfilter, #createrequest{
+    #proposals , #jobfilter, #createrequest,#hasRequest{
         margin: 0 200px;
     }
 
@@ -527,7 +538,7 @@ form {
 @media only screen and (min-width: 1200px) {
     .header,.entrycont,#companies,#needwork,#greatabout,
     #projectshowcase,#searchfilter ,#jobdetails ,#jobnav,
-    #proposals ,#jobfilter ,#createrequest{
+    #proposals ,#jobfilter ,#createrequest,#hasRequest{
         margin: 0 300px;
     }
 
@@ -823,6 +834,10 @@ body{
 
 .mb-15{
     margin-bottom: 15px;
+}
+
+.mt-15{
+    margin-top: 15px;
 }
 
 .completion {

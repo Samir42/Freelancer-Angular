@@ -1,7 +1,7 @@
 import { Skill } from './skill';
 import { Freelancer } from './freelancer';
  
-export class SkillsUsers{
+export class SkillUser{
     id:number;
     freelancerId:number;
     skillId:number;

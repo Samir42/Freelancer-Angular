@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div class="alg-center w-100 mt-15 bg-white rounded">
+    <h1 *ngIf="!jobs.length">You have no jobs yet</h1>
+    <h3><a [routerLink]="['/jobs', jobId, 'proposals']" class="text-underlineonhover showProp">Create new one</a></h3>
+</div>
+<div *ngIf="jobs.length" id="searchfilter">
+    <div class="col-12">
+        <div class="searchfilter rounded col-3">
+            <h3>Skills</h3>
+            <input type="text" class="tbx rounded col-12" placeholder="Skills" />
+            <hr id="hr" />
+            <div class="slidecontainer">
+                <h3>Hourly rate</h3>
+                <input type="range" min="2" max="80" value="2"
+                    class="slider">
+                <p id="rate">10<span> - $80</span></p>
+            </div>
+            <h3>Specific Location</h3>
+            <input type="text" class="tbx rounded col-12" placeholder="Add Location" />
+            <button class="btn btn-work rounded text-white col-12">Search</button>
+        </div>
+        <myprojects [jobs]="jobs"></myprojects>
+    </div>
+</div>
