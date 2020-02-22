@@ -8,6 +8,7 @@ import { JobService } from 'src/app/services/job.service';
 })
 export class MyprojectsComponent implements OnInit {
   ngOnInit() {
+    console.log(this.jobs)
   }
 
   @Input()

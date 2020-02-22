@@ -462,7 +462,8 @@ form {
 
     .header,.entrycont,#companies,#needwork,#greatabout,
     #projectshowcase,#searchfilter , #jobdetails , #jobnav,
-    #proposals,#jobfilter ,#createrequest,#hasRequest{
+    #proposals,#jobfilter ,#createrequest,#hasRequest,
+    #createJob,#middle{
         margin: 0 50px;
     }
 
@@ -472,12 +473,20 @@ form {
     }
 }
       
+.bg-danger{
+    background: #A94442 !important;
+}
+
+.p-15{
+    padding: 15px !important;
+}
 
 
 @media only screen and (min-width: 992px){
     .header,.entrycont,#companies,#needwork,#greatabout,
     #projectshowcase,#searchfilter ,#jobdetails ,#jobnav,
-    #proposals , #jobfilter, #createrequest,#hasRequest{
+    #proposals , #jobfilter, #createrequest,#hasRequest,
+    #createJob,#middle{
         margin: 0 200px;
     }
 
@@ -507,9 +516,7 @@ form {
         display: block;
     }
     
-    .searchfilter{
-        display: block;
-    }
+    
 
     .row{
         flex-direction: row;
@@ -538,7 +545,8 @@ form {
 @media only screen and (min-width: 1200px) {
     .header,.entrycont,#companies,#needwork,#greatabout,
     #projectshowcase,#searchfilter ,#jobdetails ,#jobnav,
-    #proposals ,#jobfilter ,#createrequest,#hasRequest{
+    #proposals ,#jobfilter ,#createrequest,#hasRequest,
+    #createJob,#middle{
         margin: 0 300px;
     }
 
@@ -554,6 +562,10 @@ form {
     .col-lg-10 {width: 83.33%;}
     .col-lg-11 {width: 91.66%;}
     .col-lg-12 {width: 100%;}
+
+    .searchfilter{
+        display: block;
+    }
 }
 
 /*#endregion */
@@ -794,7 +806,7 @@ header{
     background: yellow;
 }
 .alg-right{
-    float: right;
+    float: right !important;
 }
 
 body{

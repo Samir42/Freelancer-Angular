@@ -1,13 +1,7 @@
 <app-header></app-header>
-<div class="alg-center w-100 mt-15 bg-white rounded">
-    <h1 *ngIf="!requests?.length">You have no requests yet</h1>
-    <h3><a [routerLink]="['/jobs']" class="text-underlineonhover showProp">Take me to jobs</a></h3>
-</div>
-<div id="searchfilter">
-
-<ul class="proposal-list col-s-12 col-xs-12">
-    <li *ngFor="let request of requests"  class="proposal-list-item mb-15 bg-white rounded">
-        <a href="#">
+<div id="middle">
+    <ul class="proposal-list col-s-12 col-xs-12">
+        <li *ngFor="let request of requests" class="proposal-list-item mb-15 bg-white rounded">
             <div class="prop-li-info-card-heading  col-s-12 col-xs-12">
                 <div class="prop-li-info-card-heading-img mr-10 alg-center col-xs-2 col-s-2">
                     <img src="../../../assets/media/graphic-design.png" alt="" />
@@ -29,10 +23,12 @@
                     <p>{{ request.requestDescription }}</p>
                 </div>
                 <div class="prop-li-info-card-body-spam alg-right col-xs-3 col-s-3">
-                    <a class="cl-blue" href="#">Report as spam</a>
+                    <button class="btn btn-work rounded text-white col-8 col-md-6 col-s-12 col-xs-12 p-15"
+                        (click)="onAccept(request.freelancerId)">Accept</button>
+                    <button
+                        class="btn btn-work bg-danger rounded text-white col-8 col-md-6 col-s-12 col-xs-12 p-15">Reject</button>
                 </div>
             </div>
-        </a>
-    </li>
-</ul>
+        </li>
+    </ul>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { JobService } from 'src/app/services/job.service';
+import { RequestService } from 'src/app/services/request.service';
 
 @Component({
   selector: 'app-proposals',
@@ -8,7 +9,8 @@ import { JobService } from 'src/app/services/job.service';
 })
 export class ProposalsComponent implements OnInit {
 
-  constructor(private jobService: JobService) { }
+  constructor(private jobService: JobService,
+    private requestService:RequestService) { }
 
   proposals: Request[];
 
@@ -18,10 +20,9 @@ export class ProposalsComponent implements OnInit {
 
 
   getProposals(id: number) {
-    return this.jobService.getProposals(id)
+    return this.requestService.getProposals(id)
       .subscribe(res => {
-      this.proposals = res;
-        console.log(this.proposals)
+        this.proposals = res;
       });
   }
 

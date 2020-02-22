@@ -18,29 +18,24 @@ export class JobdetailsComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.jobId = params['id'] //log the value of id
     });
-    console.log(this.req)
   }
 
-//    const req:Request = {
-//     id:1,
-//     jobId:1,
-//     freelancerId:1,
-//     requestDescription: 'babatDescription',
-//     howManyDay: 3,
-//     freelancer:null
-// } as Request
+  //    const req:Request = {
+  //     id:1,
+  //     jobId:1,
+  //     freelancerId:1,
+  //     requestDescription: 'babatDescription',
+  //     howManyDay: 3,
+  //     freelancer:null
+  // } as Request
 
- req : Request = {
-id: 1, jobId: 1, freelancerId: 1, requestDescription: 'asdasda',
-  howManyDay: 3, freelancer: null
-} as unknown  as Request;
+  req: Request = {
+    id: 1, jobId: 1, freelancerId: 1, requestDescription: 'asdasda',
+    howManyDay: 3, freelancer: null
+  } as unknown as Request;
 
   jobId: number;
-  
-  @Input()
-  job:Job;
 
-  log(x){
-    console.log(x);
-  }
+  @Input()
+  job: Job;
 }

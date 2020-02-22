@@ -8,8 +8,6 @@ import { ThrowStmt } from '@angular/compiler';
   providedIn: 'root'
 })
 export class JobService {
-  jobsUrl = 'http://localhost:5000/api/Job';
-  proposalUrl = "http://localhost:5000/api/Job";
   jobUrl = "http://localhost:5000/api/Job";
   userUrl = "http://localhost:5000/api/User";
 
@@ -17,21 +15,33 @@ export class JobService {
   }
 
   getJobs(): Observable<Job[]> {
-    return this.httpClient.get<Job[]>(this.jobsUrl);
+    return this.httpClient.get<Job[]>(this.jobUrl);
   }
 
   getmyJobs(): Observable<Job[]> {
-    var tokenHeader = new HttpHeaders({ 'Authorization': 'Bearer ' + localStorage.getItem('token') });
 
-    return this.httpClient.get<Job[]>(this.userUrl + '/' + 'jobs', { headers: tokenHeader });
+
+    return this.httpClient.get<Job[]>(this.userUrl + '/' + 'jobs', { headers: this.getToken() });
   }
 
   getJob(id: number | string): Observable<Job> {
     return this.httpClient.get<Job>(this.jobUrl + '/' + id);
   }
 
+  postJob(job: Job): Observable<Job> {
+    return this.httpClient.post<Job>(this.jobUrl, job, { headers: this.getToken() });
+  }
 
-  getProposals(id: number | string): Observable<Request[]> {
-    return this.httpClient.get<Request[]>(this.proposalUrl + '/' + id + '/Requests');
+  getToken() {
+    return new HttpHeaders({ 'Authorization': 'Bearer ' + localStorage.getItem('token') });
+  }
+
+
+  updateJob(job: Job) {
+    return this.httpClient.post(this.jobUrl + '/update', job, { headers: this.getToken() })
+  }
+
+  getDoneProjects(): Observable<Job[]> {
+    return this.httpClient.get<Job[]>(this.jobUrl + '/done', { headers: this.getToken() })
   }
 }

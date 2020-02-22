@@ -33,6 +33,9 @@ import {MatSelectModule} from '@angular/material/select';
 import { FilterComponent } from './user/project/filter/filter.component';
 import { MyprojectsComponent } from './user/project/myprojects/myprojects.component';
 import { CreateComponent } from './job/create/create.component';
+import { RequestsComponent } from './user/requests/requests.component';
+import { RequeststomyjobComponent } from './user/requeststomyjob/requeststomyjob.component';
+import { DoneprojectsComponent } from './user/doneprojects/doneprojects.component';
  
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -41,6 +44,7 @@ const appRoutes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'proposals', component: ProposalsComponent},
   { path: 'proposalinfo', component: ProposalinfoComponent},
+  { path: 'me/requests', component: RequestsComponent},
   {
     path: '',
     component: HomepageComponent
@@ -73,7 +77,10 @@ const appRoutes: Routes = [
     FirsterrorPipe,
     FilterComponent,
     MyprojectsComponent,
-    CreateComponent
+    CreateComponent,
+    RequestsComponent,
+    RequeststomyjobComponent,
+    DoneprojectsComponent
   ],
   imports: [
     MatSliderModule,

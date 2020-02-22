@@ -1,6 +1,6 @@
-<ul class="search-result-list pt-0 m-0 col-10">
+<ul class="search-result-list pt-0 m-0 col-xs-12 col-s-12 col-lg-10">
     <li *ngFor="let job of jobs" class="search-result-list-item bg-white rounded col-s-12">
-        <a [routerLink]="['/jobdetails', job.id]">
+        <a [routerLink]="['/me/jobs', job.id, 'requests']">
             <div class="infocard">
                 <div class="info-card-img col-xl-2 col-2 col-md-2 col-s-3 col-xs-3">
                     <svg class="info-card-img" width="70" height="70" xmlns="http://www.w3.org/2000/svg"
@@ -34,6 +34,8 @@
                 <div class="info-card-price col-xs-2 col-2 col-md-2 col-s-4">
                     <h3>$ {{ job.price }}</h3>
                     <h4>USD</h4>
+                </div>
+                <div>
                 </div>
             </div>
         </a>
