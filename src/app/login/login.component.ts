@@ -14,15 +14,18 @@ export class LoginComponent implements OnInit {
   constructor(private accountService: AccountService,
     private skillService: SkillService,
     private router: Router) { }
-    
-    ngOnInit() {
-      if (localStorage.getItem('token') != null) {
-    }
+
+  ngOnInit() {
+    if (localStorage.getItem('token'))
+      this.router.navigate(['/jobs'])
 
   }
-  
+
+  errorMessage:string;
+
   onSubmit(email: string, password: string) {
     const user: User = { email, password } as User;
+    
     this.accountService.login(user);
   }
 }

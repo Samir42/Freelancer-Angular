@@ -1,6 +1,6 @@
-<app-header></app-header>
-<div class="alg-center w-100 mt-15 bg-white rounded">
-    <h1 *ngIf="!jobs?.length">You have no jobs yet</h1>
+<app-navbar></app-navbar>
+<div *ngIf="!jobs?.length" class="alg-center w-100 mt-15 bg-white rounded">
+    <h1>You have no jobs yet</h1>
     <h3><a [routerLink]="['/job/create']" class="text-underlineonhover showProp">Create new one</a></h3>
 </div>
 <div *ngIf="jobs?.length" id="searchfilter">

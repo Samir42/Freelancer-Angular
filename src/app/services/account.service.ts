@@ -52,8 +52,4 @@ export class AccountService {
       }
     );
   }
-
-  logout(): void {
-    this.isLoggedIn = false;
-  }
 }

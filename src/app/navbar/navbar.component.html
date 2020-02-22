@@ -1,0 +1,27 @@
+<header class="w-100 bg-white">
+    <div id="middle">
+        <div class="topnav" id="myTopnav">
+            <a [routerLink]="['/jobs']" class="active">Home</a>
+            <a [routerLink]="['/users']">Freelancers</a>
+            <a [routerLink]="['/me/jobs/done']">Done projects</a>
+            <a [routerLink]="['/me/requests']">My Requests</a>
+            <a [routerLink]="['/me/jobs']">My projects</a>
+            <a [routerLink]="['/job/create']">Post project</a>
+            <a (click)="onLogout()">Logout</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>

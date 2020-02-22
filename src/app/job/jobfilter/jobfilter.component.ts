@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JobfilterComponent implements OnInit {
 
-
+  get hasToken():boolean{
+    return localStorage.getItem('token') ? true : false;
+  }
   rate:number=2;
   constructor() { }
 

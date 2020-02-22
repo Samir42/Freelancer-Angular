@@ -1,4 +1,5 @@
-<app-header></app-header>
+<app-header *ngIf="!hasToken"></app-header>
+<app-navbar *ngIf="hasToken"></app-navbar>
 <div id="jobfilter">
     <div class="col-12">
         <div class="searchfilter rounded col-2">

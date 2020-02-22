@@ -7,11 +7,11 @@ import { Router } from '@angular/router';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router) {
+    if (localStorage.getItem('token'))
+      route.navigate(['/jobs'])
+  }
 
   ngOnInit() {
-    // if (!localStorage.getItem('token')) {
-    //   this.route.navigate(['/login']);
-    console.log(localStorage.getItem('token'));
-    }
+  }
 }

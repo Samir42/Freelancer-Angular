@@ -36,15 +36,17 @@ import { CreateComponent } from './job/create/create.component';
 import { RequestsComponent } from './user/requests/requests.component';
 import { RequeststomyjobComponent } from './user/requeststomyjob/requeststomyjob.component';
 import { DoneprojectsComponent } from './user/doneprojects/doneprojects.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AuthGuard } from './auth/auth.guard';
  
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-
+  { path: 'users', component: SearchfilterComponent},
   { path: 'homepage', component: HomepageComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'proposals', component: ProposalsComponent},
   { path: 'proposalinfo', component: ProposalinfoComponent},
-  { path: 'me/requests', component: RequestsComponent},
+  { path: 'me/requests', component: RequestsComponent,canActivate:[AuthGuard]},
   {
     path: '',
     component: HomepageComponent
@@ -80,7 +82,8 @@ const appRoutes: Routes = [
     CreateComponent,
     RequestsComponent,
     RequeststomyjobComponent,
-    DoneprojectsComponent
+    DoneprojectsComponent,
+    NavbarComponent
   ],
   imports: [
     MatSliderModule,

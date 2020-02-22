@@ -4,7 +4,7 @@
             <div class="header-right">
                   <a routerLink="/login" routerLinkActive="active" class="text-underlineonhover">Log In</a>
                   <a routerLink="/signup" class="text-underlineonhover">Sign Up</a>
-                  <a class="btn btn-hire rounded text-white" id="paj">Post a Project</a>
+                  <a [routerLink]="['/job/create']" class="btn btn-hire rounded text-white" id="paj">Post a Project</a>
             </div>
       </div>
 </header>

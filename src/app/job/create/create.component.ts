@@ -12,30 +12,32 @@ import { Router } from '@angular/router';
 })
 export class CreateComponent implements OnInit {
 
-  job: Job = {description:'description',title:'title',price:500} as Job;
-  skills:Skill[];
-  jobsSkills:JobsSkills[] = [];
-  selectedSkills:Skill[];
+  job: Job = { description: 'description', title: 'title', price: 500 } as Job;
+  skills: Skill[];
+  jobsSkills: JobsSkills[] = [];
+  selectedSkills: Skill[];
 
-  constructor(private skillService:SkillService,
-              private jobService:JobService,
-              private route:Router) { }
+  constructor(private skillService: SkillService,
+    private jobService: JobService,
+    private route: Router) {
+      if(!localStorage.getItem('token')) route.navigate(['/login'])
+  }
 
   ngOnInit() {
     this.getSkills();
   }
 
-  onSubmit(){
+  onSubmit() {
     this.fillSkills();
 
     this.job.jobsSkills = this.jobsSkills;
 
-    console.log('posted job' , this.job);
-    this.jobService.postJob(this.job).subscribe(x=> {console.log(x);this.route.navigate(['/me/jobs'])});
+    console.log('posted job', this.job);
+    this.jobService.postJob(this.job).subscribe(x => { console.log(x); this.route.navigate(['/me/jobs']) });
   }
 
-  getSkills(){
-    this.skillService.getSkills().subscribe(x=> this.skills = x);
+  getSkills() {
+    this.skillService.getSkills().subscribe(x => this.skills = x);
   }
 
   fillSkills() {

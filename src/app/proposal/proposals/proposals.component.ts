@@ -9,8 +9,7 @@ import { RequestService } from 'src/app/services/request.service';
 })
 export class ProposalsComponent implements OnInit {
 
-  constructor(private jobService: JobService,
-    private requestService:RequestService) { }
+  constructor(private jobService: JobService) { }
 
   proposals: Request[];
 
@@ -20,7 +19,7 @@ export class ProposalsComponent implements OnInit {
 
 
   getProposals(id: number) {
-    return this.requestService.getProposals(id)
+    return this.jobService.getProposals(id)
       .subscribe(res => {
         this.proposals = res;
       });

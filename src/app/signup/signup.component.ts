@@ -67,7 +67,7 @@ export class SignupComponent implements OnInit {
       
       console.log(freelancer)
 
-      // this.route.navigate(["/jobs"])
+      this.route.navigate(["/jobs"])
     }
   }
 

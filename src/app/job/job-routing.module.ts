@@ -9,6 +9,7 @@ import { FilterComponent } from '../user/project/filter/filter.component'
 import { CreateComponent } from './create/create.component';
 import { RequeststomyjobComponent } from '../user/requeststomyjob/requeststomyjob.component';
 import { DoneprojectsComponent } from '../user/doneprojects/doneprojects.component';
+import { AuthGuard } from '../auth/auth.guard';
 
 const jobRoutes: Routes = [
   { path: 'jobdetails', component: JobdetailsComponent },
@@ -16,10 +17,10 @@ const jobRoutes: Routes = [
   { path: 'jobs/:id/proposals', component: ProposalinfoComponent },
   { path: 'jobdetails/:id', component: JobComponent },
   { path: 'jobs', component: JobfilterComponent },
-  { path: 'me/jobs', component: FilterComponent },
-  { path: 'me/jobs/:id/requests', component: RequeststomyjobComponent },
-  { path: 'me/jobs/done', component: DoneprojectsComponent },
-  { path: 'job/create', component: CreateComponent },
+  { path: 'me/jobs', component: FilterComponent,canActivate:[AuthGuard] },
+  { path: 'me/jobs/:id/requests', component: RequeststomyjobComponent,canActivate:[AuthGuard] },
+  { path: 'me/jobs/done', component: DoneprojectsComponent ,canActivate:[AuthGuard]},
+  { path: 'job/create', component: CreateComponent ,canActivate:[AuthGuard]},
 ];
 
 

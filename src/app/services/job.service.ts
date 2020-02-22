@@ -44,4 +44,8 @@ export class JobService {
   getDoneProjects(): Observable<Job[]> {
     return this.httpClient.get<Job[]>(this.jobUrl + '/done', { headers: this.getToken() })
   }
+
+  getProposals(id: number): Observable<Request[]> {
+    return this.httpClient.get<Request[]>(this.jobUrl + '/' + id + "/requests");
+  }
 }
